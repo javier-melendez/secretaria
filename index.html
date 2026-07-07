@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filler Secretaría</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  </head>
+  <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <main class="app-shell">
+      <section class="panel uploader-panel">
+        <div class="section-header">
+          <span id="statusBadge" class="status-pill idle">Esperando archivo</span>
+        </div>
+
+        <label id="dropZone" class="drop-zone" for="templateFile">
+          <div class="drop-icon">📄</div>
+          <strong>Arrastra aquí tu archivo .docx</strong>
+          <span>o haz clic para buscarlo</span>
+        </label>
+
+        <div class="actions-row">
+          <label class="btn primary" for="templateFile">Cargar plantilla</label>
+          <input id="templateFile" type="file" accept=".docx" />
+          <button id="resetBtn" class="btn secondary">Resetear</button>
+        </div>
+
+        <div id="templateInfo" class="template-info">
+          Aún no has cargado ninguna plantilla.
+        </div>
+      </section>
+
+      <section class="panel form-panel">
+        <div class="section-header">
+          <button id="previewBtn" class="btn ghost">Vista previa</button>
+          <button id="processBtn" class="btn primary" disabled>Descargar Word</button>
+        </div>
+
+        <form id="fieldForm" class="field-grid"></form>
+      </section>
+
+      <section id="previewPanel" class="panel preview-panel">
+        <div id="previewContent" class="preview-body">
+          <p>Tu contenido aparecerá aquí cuando cargues una plantilla y completes los campos.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="causales-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
